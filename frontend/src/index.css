@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Botón primario */
+  .btn-primary {
+    background: linear-gradient(135deg, #4BA8BE 0%, #3d8a9e 100%);
+    @apply text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300;
+    box-shadow: 0 4px 15px rgba(75, 168, 190, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(75, 168, 190, 0.4);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(1px);
+  }
+  
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Botón secundario */
+  .btn-secondary {
+    background: linear-gradient(135deg, #8A3A4F 0%, #6e2e3f 100%);
+    @apply text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300;
+    box-shadow: 0 4px 15px rgba(138, 58, 79, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 58, 79, 0.4);
+  }
+  
+  .btn-secondary:active {
+    transform: translateY(1px);
+  }
+
+  /* Input field */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl transition-all duration-300;
+    background: white;
+    border: 2px solid #e5e7eb;
+  }
+  
+  .input-field:focus {
+    @apply outline-none;
+    border-color: #4BA8BE;
+    box-shadow: 0 0 0 3px rgba(75, 168, 190, 0.1);
+  }
+  
+  .input-field:hover {
+    border-color: #4BA8BE;
+  }
+
+  /* Tarjeta */
+  .card {
+    @apply bg-white rounded-2xl shadow-xl overflow-hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Badge */
+  .badge-success {
+    @apply px-2 py-1 rounded-full text-xs font-semibold;
+    background: #dcfce7;
+    color: #166534;
+  }
+  
+  .badge-warning {
+    @apply px-2 py-1 rounded-full text-xs font-semibold;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .badge-info {
+    @apply px-2 py-1 rounded-full text-xs font-semibold;
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #4BA8BE 0%, #8A3A4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-slide-left {
+    animation: slideLeft 0.5s ease-out;
+  }
+  
+  .animate-slide-right {
+    animation: slideRight 0.5s ease-out;
+  }
+  
+  .animate-zoom {
+    animation: zoom 0.3s ease-out;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes zoom {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+/* Agrega esto a frontend/src/index.css si quieres estilos adicionales */
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  @apply text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-danger:active {
+  transform: translateY(1px);
+}
